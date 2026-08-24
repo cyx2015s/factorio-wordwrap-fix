@@ -1,0 +1,24 @@
+[package]
+name = "factorio_wordwrap_fix"
+version = "0.1.0"
+edition = "2024"
+description = "Injected DLL: teach Factorio's word-wrap to break CJK (Chinese) text"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_System_SystemServices",
+    "Win32_System_Console",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Memory",
+] }
+log = "0.4"
+env_logger = "0.11"
+anyhow = "1"
+# read factorio.pdb at runtime to locate multiMakeLinesStrView by symbol, so the
+# patch point survives game updates without hardcoding a fresh RVA each time.
+pdb = "0.8"

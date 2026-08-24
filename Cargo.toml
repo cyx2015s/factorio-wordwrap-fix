@@ -1,0 +1,5 @@
+[workspace]
+resolver = "2"
+members = ["factorio_wordwrap_fix", "injector"]
+# throwaway diagnostic tool used to re-extract game offsets (not part of the mod)
+exclude = ["rextract"]
