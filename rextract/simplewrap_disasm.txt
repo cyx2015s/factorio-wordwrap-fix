@@ -1,0 +1,261 @@
+loaded 161153 public symbols
+disasm of 0x1A82120 (960 bytes):
+
+01A82120:                5 mov [rsp+20h],r9
+01A82125:                5 mov [rsp+18h],r8
+01A8212A:                5 mov [rsp+8],rcx
+01A8212F:                1 push rbx
+01A82130:                2 push r13
+01A82132:                2 push r14
+01A82134:                7 sub rsp,80h
+01A8213B:                3 mov r14,r8
+01A8213E:                3 mov r13,rdx
+01A82141:                3 mov rbx,rcx
+01A82144:                3 test r9,r9
+01A82147:                6 jne near ptr 0000000001A821EBh
+01A8214D:                3 movaps xmm0,[rdx]
+01A82150:                5 lea rdx,[rsp+40h]
+01A82155:                8 mov rcx,[rsp+0C0h]
+01A8215D:                8 movsd xmm3,qword ptr [23C7738h]
+01A82165:                8 mov r8d,[rsp+0C8h]
+01A8216D:                6 movdqa [rsp+40h],xmm0
+01A82173:                3 mov rax,[rcx]
+01A82176:                3 call qword ptr [rax+28h]
+01A82179:                3 mov rdx,rax
+01A8217C:                3 test rax,rax
+01A8217F:                2 jne short 0000000001A821C7h
+01A82181:                4 cmp [r13+8],rax
+01A82185:                2 je short 0000000001A821C7h
+01A82187:                5 movaps xmm0,[r13]
+01A8218C:                5 movaps [rsp+40h],xmm0
+01A82191:                5 psrldq xmm0,8
+01A82196:                5 movq rcx,xmm0
+01A8219B:                3 test rcx,rcx
+01A8219E:                2 je short 0000000001A821C7h
+01A821A0:                5 mov edx,1
+01A821A5:                3 cmp rdx,rcx
+01A821A8:                2 jae short 0000000001A821C7h
+01A821AA:                5 mov r8,[rsp+40h]
+01A821AF:                1 nop
+01A821B0:                5 movzx eax,byte ptr [r8+rdx]
+01A821B5:                2 test al,al
+01A821B7:                2 jns short 0000000001A821C7h
+01A821B9:                2 and al,0C0h
+01A821BB:                2 cmp al,0C0h
+01A821BD:                2 je short 0000000001A821C7h
+01A821BF:                3 inc rdx
+01A821C2:                3 cmp rdx,rcx
+01A821C5:                2 jb short 0000000001A821B0h
+01A821C7:                4 mov rax,[r13]
+01A821CB:                4 cmp [r13+8],rdx
+01A821CF:                3 mov [rbx],rax
+01A821D2:                3 mov rax,rbx
+01A821D5:                5 cmovb rdx,[r13+8]
+01A821DA:                4 mov [rbx+8],rdx
+01A821DE:                7 add rsp,80h
+01A821E5:                2 pop r14
+01A821E7:                2 pop r13
+01A821E9:                1 pop rbx
+01A821EA:                1 ret    ; (return)
+01A821EB:                8 movsxd rax,dword ptr [rsp+0C8h]
+01A821F3:                8 mov [rsp+0A8h],rbp
+01A821FB:                5 mov [rsp+78h],rsi
+01A82200:                3 mov rsi,r8
+01A82203:                5 mov [rsp+70h],rdi
+01A82208:                2 xor edi,edi
+01A8220A:                3 shr rsi,1
+01A8220D:                2 mov ebp,edi
+01A8220F:                3 shr rax,1
+01A82212:                3 cmp rax,rsi
+01A82215:                5 mov [rsp+68h],r12
+01A8221A:                5 mov [rsp+60h],r15
+01A8221F:                4 cmovb rsi,rax
+01A82223:                5 movaps [rsp+50h],xmm6
+01A82228:                8 movsd xmm6,qword ptr [23C7738h]
+01A82230:                4 cmp r8,1
+01A82234:                6 jbe near ptr 0000000001A822FAh
+01A8223A:                3 mov r12,[rdx]
+01A8223D:                8 mov r15,[rsp+0C0h]
+01A82245:                3 mov rbx,rdi
+01A82248:                3 test rsi,rsi
+01A8224B:                2 je short 0000000001A8228Eh
+01A8224D:                5 movaps xmm0,[r13]
+01A82252:                3 mov r8,rsi
+01A82255:                6 movdqa [rsp+30h],xmm0
+01A8225B:                5 mov rcx,[rsp+38h]
+01A82260:                5 mov rdx,[rsp+30h]
+01A82265:                3 cmp rbx,rcx
+01A82268:                2 jae short 0000000001A82288h
+01A8226A:                3 inc rbx
+01A8226D:                3 cmp rbx,rcx
+01A82270:                2 jae short 0000000001A82288h
+01A82272:                4 movzx eax,byte ptr [rdx+rbx]
+01A82276:                2 test al,al
+01A82278:                2 jns short 0000000001A82288h
+01A8227A:                2 and al,0C0h
+01A8227C:                2 cmp al,0C0h
+01A8227E:                2 je short 0000000001A82288h
+01A82280:                3 inc rbx
+01A82283:                3 cmp rbx,rcx
+01A82286:                2 jb short 0000000001A82272h
+01A82288:                4 sub r8,1
+01A8228C:                2 jne short 0000000001A82265h
+01A8228E:                3 mov rax,[r15]
+01A82291:                3 mov rcx,r15
+01A82294:                3 call qword ptr [rax+58h]
+01A82297:                8 mov r8,[rsp+0B8h]
+01A8229F:                5 lea rdx,[rsp+40h]
+01A822A4:                3 mov r9,r15
+01A822A7:                6 movsd qword ptr [rsp+20h],xmm6
+01A822AD:                5 mov [rsp+40h],r12
+01A822B2:                3 mov rcx,[rax]
+01A822B5:                5 mov [rsp+48h],rbx
+01A822BA:                4 mov r10,[rcx+28h]
+01A822BE:                3 mov rcx,rax
+01A822C1:                3 call r10
+01A822C4:                7 cmp eax,[rsp+0C8h]
+01A822CB:                3 mov rcx,rsi
+01A822CE:                4 cmovle rcx,r14
+01A822D2:                4 cmovle rbp,rsi
+01A822D6:                3 mov rax,rcx
+01A822D9:                3 mov r14,rcx
+01A822DC:                3 sub rax,rbp
+01A822DF:                3 mov rsi,rax
+01A822E2:                3 shr rsi,1
+01A822E5:                3 add rsi,rbp
+01A822E8:                4 cmp rax,1
+01A822EC:                6 ja near ptr 0000000001A82245h
+01A822F2:                8 mov [rsp+0B0h],rcx
+01A822FA:                3 test rbp,rbp
+01A822FD:                2 je short 0000000001A82340h
+01A822FF:                5 movaps xmm0,[r13]
+01A82304:                3 mov r8,rbp
+01A82307:                6 movdqa [rsp+40h],xmm0
+01A8230D:                5 mov rcx,[rsp+48h]
+01A82312:                5 mov rdx,[rsp+40h]
+01A82317:                3 cmp rdi,rcx
+01A8231A:                2 jae short 0000000001A8233Ah
+01A8231C:                3 inc rdi
+01A8231F:                3 cmp rdi,rcx
+01A82322:                2 jae short 0000000001A8233Ah
+01A82324:                4 movzx eax,byte ptr [rdx+rdi]
+01A82328:                2 test al,al
+01A8232A:                2 jns short 0000000001A8233Ah
+01A8232C:                2 and al,0C0h
+01A8232E:                2 cmp al,0C0h
+01A82330:                2 je short 0000000001A8233Ah
+01A82332:                3 inc rdi
+01A82335:                3 cmp rdi,rcx
+01A82338:                2 jb short 0000000001A82324h
+01A8233A:                4 sub r8,1
+01A8233E:                2 jne short 0000000001A82317h
+01A82340:                3 cmp rbp,r14
+01A82343:                6 ja near ptr 0000000001A823E9h
+01A82349:                5 movaps xmm0,[r13]
+01A8234E:                4 mov r12,[r13]
+01A82352:                6 movdqa [rsp+40h],xmm0
+01A82358:                5 mov rbx,[rsp+48h]
+01A8235D:                5 mov rsi,[rsp+40h]
+01A82362:                3 mov r15,rbp
+01A82365:                3 mov r14,rdi
+01A82368:                3 inc rbp
+01A8236B:                3 cmp rdi,rbx
+01A8236E:                2 jae short 0000000001A8238Eh
+01A82370:                3 inc rdi
+01A82373:                3 cmp rdi,rbx
+01A82376:                2 jae short 0000000001A8238Eh
+01A82378:                4 movzx eax,byte ptr [rsi+rdi]
+01A8237C:                2 test al,al
+01A8237E:                2 jns short 0000000001A8238Eh
+01A82380:                2 and al,0C0h
+01A82382:                2 cmp al,0C0h
+01A82384:                2 je short 0000000001A8238Eh
+01A82386:                3 inc rdi
+01A82389:                3 cmp rdi,rbx
+01A8238C:                2 jb short 0000000001A82378h
+01A8238E:                8 mov rcx,[rsp+0C0h]
+01A82396:                3 mov rax,[rcx]
+01A82399:                3 call qword ptr [rax+58h]
+01A8239C:                8 mov r9,[rsp+0C0h]
+01A823A4:                5 lea rdx,[rsp+40h]
+01A823A9:                8 mov r8,[rsp+0B8h]
+01A823B1:                6 movsd qword ptr [rsp+20h],xmm6
+01A823B7:                3 mov rcx,[rax]
+01A823BA:                5 mov [rsp+40h],r12
+01A823BF:                5 mov [rsp+48h],rdi
+01A823C4:                4 mov r10,[rcx+28h]
+01A823C8:                3 mov rcx,rax
+01A823CB:                3 call r10
+01A823CE:                7 cmp eax,[rsp+0C8h]
+01A823D5:                2 jg short 0000000001A823E3h
+01A823D7:                8 cmp rbp,[rsp+0B0h]
+01A823DF:                2 jbe short 0000000001A82362h
+01A823E1:                2 jmp short 0000000001A823E9h
+01A823E3:                3 mov rbp,r15
+01A823E6:                3 mov rdi,r14
+01A823E9:                5 movaps xmm6,[rsp+50h]
+01A823EE:                3 test rbp,rbp
+01A823F1:                8 mov rbp,[rsp+0A8h]
+01A823F9:                5 mov r15,[rsp+60h]
+01A823FE:                5 mov r12,[rsp+68h]
+01A82403:                6 jne near ptr 0000000001A824A5h
+01A82409:                4 mov rbx,[r13+8]
+01A8240D:                3 test rbx,rbx
+01A82410:                6 je near ptr 0000000001A824A5h
+01A82416:                5 movaps xmm0,[r13]
+01A8241B:                5 movaps [rsp+40h],xmm0
+01A82420:                5 psrldq xmm0,8
+01A82425:                5 movq rcx,xmm0
+01A8242A:                3 cmp rdi,rcx
+01A8242D:                2 jae short 0000000001A82456h
+01A8242F:                3 inc rdi
+01A82432:                3 cmp rdi,rcx
+01A82435:                2 jae short 0000000001A82456h
+01A82437:                5 mov rdx,[rsp+40h]
+01A8243C:                4 nop dword ptr [rax]
+01A82440:                4 movzx eax,byte ptr [rdx+rdi]
+01A82444:                2 test al,al
+01A82446:                2 jns short 0000000001A82456h
+01A82448:                2 and al,0C0h
+01A8244A:                2 cmp al,0C0h
+01A8244C:                2 je short 0000000001A82456h
+01A8244E:                3 inc rdi
+01A82451:                3 cmp rdi,rcx
+01A82454:                2 jb short 0000000001A82440h
+01A82456:                8 mov rsi,[rsp+0C0h]
+01A8245E:                3 mov rcx,rsi
+01A82461:                3 mov rax,[rsi]
+01A82464:                3 call qword ptr [rax+58h]
+01A82467:                4 mov rcx,[r13]
+01A8246B:                5 lea r8,[rsp+40h]
+01A82470:                8 mov r9,[rsp+0B8h]
+01A82478:                5 lea rdx,[rsp+30h]
+01A8247D:                5 mov [rsp+40h],rcx
+01A82482:                3 cmp rbx,rdi
+01A82485:                3 mov rcx,[rax]
+01A82488:                4 cmovb rdi,rbx
+01A8248C:                5 mov [rsp+20h],rsi
+01A82491:                5 mov [rsp+48h],rdi
+01A82496:                4 mov r10,[rcx+48h]
+01A8249A:                3 mov rcx,rax
+01A8249D:                3 call r10
+01A824A0:                5 mov rdi,[rsp+38h]
+01A824A5:                8 mov rdx,[rsp+0A0h]
+01A824AD:                4 cmp [r13+8],rdi
+01A824B1:                4 mov rax,[r13]
+01A824B5:                5 cmovb rdi,[r13+8]
+01A824BA:                5 mov rsi,[rsp+78h]
+01A824BF:                3 mov [rdx],rax
+01A824C2:                3 mov rax,rdx
+01A824C5:                4 mov [rdx+8],rdi
+01A824C9:                5 mov rdi,[rsp+70h]
+01A824CE:                7 add rsp,80h
+01A824D5:                2 pop r14
+01A824D7:                2 pop r13
+01A824D9:                1 pop rbx
+01A824DA:                1 ret    ; (return)
+01A824DB:                1 int 3
+01A824DC:                1 int 3
+01A824DD:                1 int 3
+01A824DE:                1 int 3
+01A824DF:                1 int 3

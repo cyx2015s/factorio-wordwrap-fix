@@ -6,3 +6,7 @@ edition = "2021"
 [dependencies]
 pdb = "0.8"
 iced-x86 = "1"
+
+[[bin]]
+name = "disasm"
+path = "src/bin/disasm.rs"

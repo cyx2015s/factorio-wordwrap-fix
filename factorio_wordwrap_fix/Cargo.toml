@@ -12,13 +12,18 @@ crate-type = ["cdylib"]
 windows = { version = "0.58", features = [
     "Win32_Foundation",
     "Win32_System_SystemServices",
-    "Win32_System_Console",
     "Win32_System_LibraryLoader",
     "Win32_System_Memory",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_Threading",
 ] }
 log = "0.4"
 env_logger = "0.11"
 anyhow = "1"
+# Native entry observation and the small boundary-block detour.
+retour = "0.4.0-alpha.4"
 # read factorio.pdb at runtime to locate multiMakeLinesStrView by symbol, so the
 # patch point survives game updates without hardcoding a fresh RVA each time.
 pdb = "0.8"
+unicode-linebreak = "0.1.5"
+unicode-segmentation = "1.13"
