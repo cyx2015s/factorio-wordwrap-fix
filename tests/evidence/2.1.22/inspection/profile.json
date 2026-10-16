@@ -1,0 +1,124 @@
+{
+  "exe": "\\\\?\\D:\\异星工厂\\Factorio_2.1\\bin\\x64\\factorio.exe",
+  "pdb": "\\\\?\\D:\\异星工厂\\Factorio_2.1\\bin\\x64\\factorio.pdb",
+  "identity": {
+    "guid": [
+      252,
+      214,
+      123,
+      89,
+      48,
+      223,
+      5,
+      72,
+      134,
+      72,
+      120,
+      16,
+      250,
+      188,
+      142,
+      220
+    ],
+    "age": 1
+  },
+  "image_size": 51572736,
+  "compatible": true,
+  "diagnostics": [],
+  "multi": {
+    "name": "?multiMakeLinesStrView@ResizableText@agui@@SA?AW4Result@12@PEBVFont@2@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$allocator@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@@6@HHPEAVRichTextData@2@@Z",
+    "rva": 27918400,
+    "size": 1056,
+    "raw_fingerprint": "a64b0b17810bdac4",
+    "normalized_fingerprint": "8d64185d4a401d8c",
+    "calls": [
+      {
+        "offset": 190,
+        "target_rva": 22918416,
+        "symbols": [
+          "??$_Emplace_one_at_back@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@?$vector@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$allocator@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@@std@@AEAAAEAV?$basic_string_view@DU?$char_traits@D@std@@@1@AEBV21@@Z",
+          "??$_Emplace_one_at_back@AEBVVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@AEBV2@@Z",
+          "??$_Emplace_one_at_back@VColor@agui@@@?$vector@VColor@agui@@V?$allocator@VColor@agui@@@std@@@std@@AEAAAEAVColor@agui@@$$QEAV23@@Z",
+          "??$_Emplace_one_at_back@VVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@$$QEAV2@@Z"
+        ]
+      },
+      {
+        "offset": 210,
+        "target_rva": 22918416,
+        "symbols": [
+          "??$_Emplace_one_at_back@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@?$vector@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$allocator@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@@std@@AEAAAEAV?$basic_string_view@DU?$char_traits@D@std@@@1@AEBV21@@Z",
+          "??$_Emplace_one_at_back@AEBVVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@AEBV2@@Z",
+          "??$_Emplace_one_at_back@VColor@agui@@@?$vector@VColor@agui@@V?$allocator@VColor@agui@@@std@@@std@@AEAAAEAVColor@agui@@$$QEAV23@@Z",
+          "??$_Emplace_one_at_back@VVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@$$QEAV2@@Z"
+        ]
+      },
+      {
+        "offset": 408,
+        "target_rva": 27917440,
+        "symbols": [
+          "?simpleWrapTextUnsafe@ResizableText@agui@@SA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@V34@_KPEAVRichTextData@2@PEBVFont@2@H@Z"
+        ]
+      },
+      {
+        "offset": 469,
+        "target_rva": 31757488,
+        "symbols": [
+          "isspace"
+        ]
+      },
+      {
+        "offset": 533,
+        "target_rva": 31757488,
+        "symbols": [
+          "isspace"
+        ]
+      },
+      {
+        "offset": 692,
+        "target_rva": 22918416,
+        "symbols": [
+          "??$_Emplace_one_at_back@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@?$vector@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$allocator@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@@std@@AEAAAEAV?$basic_string_view@DU?$char_traits@D@std@@@1@AEBV21@@Z",
+          "??$_Emplace_one_at_back@AEBVVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@AEBV2@@Z",
+          "??$_Emplace_one_at_back@VColor@agui@@@?$vector@VColor@agui@@V?$allocator@VColor@agui@@@std@@@std@@AEAAAEAVColor@agui@@$$QEAV23@@Z",
+          "??$_Emplace_one_at_back@VVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@$$QEAV2@@Z"
+        ]
+      },
+      {
+        "offset": 964,
+        "target_rva": 31646948,
+        "symbols": [
+          "??3@YAXPEAX_K@Z",
+          "??_V@YAXPEAX@Z"
+        ]
+      },
+      {
+        "offset": 1030,
+        "target_rva": 31729300,
+        "symbols": [
+          "_invoke_watson"
+        ]
+      },
+      {
+        "offset": 1036,
+        "target_rva": 25671952,
+        "symbols": [
+          "?_Xran@?$basic_string_view@DU?$char_traits@D@std@@@std@@CAXXZ"
+        ]
+      }
+    ],
+    "differences": [],
+    "assembly": "01AA0040: mov rax,rsp\n01AA0043: mov [rax+20h],r9d\n01AA0047: mov [rax+18h],r8\n01AA004B: mov [rax+8],rcx\n01AA004F: push rbp\n01AA0050: push rbx\n01AA0051: push rsi\n01AA0052: push rdi\n01AA0053: push r12\n01AA0055: push r13\n01AA0057: push r14\n01AA0059: push r15\n01AA005B: lea rbp,[rax-4Fh]\n01AA005F: sub rsp,0C8h\n01AA0066: movaps [rax-58h],xmm6\n01AA006A: mov r13d,r9d\n01AA006D: mov r12,rcx\n01AA0070: mov rax,[r8]\n01AA0073: cmp rax,[r8+8]\n01AA0077: je short 0000000001AA007Dh\n01AA0079: mov [r8+8],rax\n01AA007D: xorps xmm0,xmm0\n01AA0080: movdqu [rbp-41h],xmm0\n01AA0085: mov qword ptr [rbp-31h],0\n01AA008D: mov rsi,rdx\n01AA0090: cmp qword ptr [rdx+18h],0Fh\n01AA0095: jbe short 0000000001AA009Ah\n01AA0097: mov rsi,[rdx]\n01AA009A: mov rdi,[rdx+10h]\n01AA009E: xor ebx,ebx\n01AA00A0: lea rax,[rbx+rsi]\n01AA00A4: mov [rbp-79h],rax\n01AA00A8: xor edx,edx\n01AA00AA: mov ecx,1\n01AA00AF: mov [rbp-71h],rdx\n01AA00B3: mov r8,rbx\n01AA00B6: cmp rbx,rdi\n01AA00B9: jae short 0000000001AA010Ah\n01AA00BB: inc rbx\n01AA00BE: cmp rbx,rdi\n01AA00C1: jae short 0000000001AA00DCh\n01AA00C3: movzx eax,byte ptr [rbx+rsi]\n01AA00C7: test al,al\n01AA00C9: jns short 0000000001AA00DCh\n01AA00CB: and al,0C0h\n01AA00CD: cmp al,0C0h\n01AA00CF: je short 0000000001AA00DCh\n01AA00D1: inc rbx\n01AA00D4: inc rcx\n01AA00D7: cmp rbx,rdi\n01AA00DA: jb short 0000000001AA00C3h\n01AA00DC: mov r14,rcx\n01AA00DF: test rcx,rcx\n01AA00E2: je short 0000000001AA00F6h\n01AA00E4: cmp rcx,1\n01AA00E8: jne short 0000000001AA00F1h\n01AA00EA: cmp byte ptr [r8+rsi],0Ah\n01AA00EF: je short 0000000001AA00F6h\n01AA00F1: add rdx,rcx\n01AA00F4: jmp short 0000000001AA00AAh\n01AA00F6: lea rdx,[rbp-79h]\n01AA00FA: lea rcx,[rbp-41h]\n01AA00FE: call 00000000015DB510h ; ??$_Emplace_one_at_back@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@?$vector@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$allocator@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@@std@@AEAAAEAV?$basic_string_view@DU?$char_traits@D@std@@@1@AEBV21@@Z | ??$_Emplace_one_at_back@AEBVVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@AEBV2@@Z | ??$_Emplace_one_at_back@VColor@agui@@@?$vector@VColor@agui@@V?$allocator@VColor@agui@@@std@@@std@@AEAAAEAVColor@agui@@$$QEAV23@@Z | ??$_Emplace_one_at_back@VVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@$$QEAV2@@Z\n01AA0103: test r14,r14\n01AA0106: je short 0000000001AA0117h\n01AA0108: jmp short 0000000001AA00A0h\n01AA010A: lea rdx,[rbp-79h]\n01AA010E: lea rcx,[rbp-41h]\n01AA0112: call 00000000015DB510h ; ??$_Emplace_one_at_back@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@?$vector@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$allocator@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@@std@@AEAAAEAV?$basic_string_view@DU?$char_traits@D@std@@@1@AEBV21@@Z | ??$_Emplace_one_at_back@AEBVVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@AEBV2@@Z | ??$_Emplace_one_at_back@VColor@agui@@@?$vector@VColor@agui@@V?$allocator@VColor@agui@@@std@@@std@@AEAAAEAVColor@agui@@$$QEAV23@@Z | ??$_Emplace_one_at_back@VVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@$$QEAV2@@Z\n01AA0117: mov dword ptr [rbp+5Fh],0\n01AA011E: mov rcx,[rbp-41h]\n01AA0122: mov [rbp-49h],rcx\n01AA0126: mov rax,[rbp-39h]\n01AA012A: mov [rbp-29h],rax\n01AA012E: cmp rcx,rax\n01AA0131: je near ptr 0000000001AA03D1h\n01AA0137: nop word ptr [rax+rax]\n01AA0140: movups xmm6,[rcx]\n01AA0143: movaps [rbp-79h],xmm6\n01AA0147: xor r14d,r14d\n01AA014A: mov [rsp+30h],r14\n01AA014F: mov rax,[rcx]\n01AA0152: mov rcx,[rcx+8]\n01AA0156: add rcx,rax\n01AA0159: cmp rax,rcx\n01AA015C: je short 0000000001AA0191h\n01AA015E: xchg ax,ax\n01AA0160: inc r14\n01AA0163: inc rax\n01AA0166: cmp rax,rcx\n01AA0169: je short 0000000001AA018Ch\n01AA016B: nop dword ptr [rax+rax]\n01AA0170: movzx edx,byte ptr [rax]\n01AA0173: test dl,dl\n01AA0175: jns short 0000000001AA0187h\n01AA0177: and dl,0C0h\n01AA017A: cmp dl,0C0h\n01AA017D: je short 0000000001AA0187h\n01AA017F: inc rax\n01AA0182: cmp rcx,rax\n01AA0185: jne short 0000000001AA0170h\n01AA0187: cmp rax,rcx\n01AA018A: jne short 0000000001AA0160h\n01AA018C: mov [rsp+30h],r14\n01AA0191: movdqa xmm0,xmm6\n01AA0195: psrldq xmm0,8\n01AA019A: movq rsi,xmm0\n01AA019F: movq r15,xmm6\n01AA01A4: mov [rbp-69h],r15\n01AA01A8: mov [rsp+38h],rsi\n01AA01AD: movaps [rbp-59h],xmm6\n01AA01B1: cmp r13d,7FFFFFFFh\n01AA01B8: je short 0000000001AA01E4h\n01AA01BA: movdqa [rbp-59h],xmm6\n01AA01BF: mov [rsp+28h],r13d\n01AA01C4: mov [rsp+20h],r12\n01AA01C9: mov r9,[rbp+7Fh]\n01AA01CD: mov r8,r14\n01AA01D0: lea rdx,[rbp-59h]\n01AA01D4: lea rcx,[rbp-21h]\n01AA01D8: call 0000000001A9FC80h ; ?simpleWrapTextUnsafe@ResizableText@agui@@SA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@V34@_KPEAVRichTextData@2@PEBVFont@2@H@Z\n01AA01DD: movups xmm6,[rax]\n01AA01E0: movaps [rbp-59h],xmm6\n01AA01E4: xor r13d,r13d\n01AA01E7: movdqa xmm0,xmm6\n01AA01EB: psrldq xmm0,8\n01AA01F0: movq rdi,xmm0\n01AA01F5: cmp rdi,rsi\n01AA01F8: je near ptr 0000000001AA030Bh\n01AA01FE: movq rbx,xmm6\n01AA0203: test rdi,rdi\n01AA0206: je short 0000000001AA023Ch\n01AA0208: nop dword ptr [rax+rax]\n01AA0210: movzx ecx,byte ptr [rbx+rdi-1]\n01AA0215: call 0000000001E494B0h ; isspace\n01AA021A: test eax,eax\n01AA021C: jne short 0000000001AA023Ch\n01AA021E: cmp byte ptr [rbx+rdi-1],5Dh\n01AA0223: je short 0000000001AA023Ch\n01AA0225: lea rax,[rdi-1]\n01AA0229: cmp rdi,rax\n01AA022C: cmovb rax,rdi\n01AA0230: mov rdi,rax\n01AA0233: mov [rbp-51h],rax\n01AA0237: test rax,rax\n01AA023A: jne short 0000000001AA0210h\n01AA023C: mov rsi,rdi\n01AA023F: test rdi,rdi\n01AA0242: je short 0000000001AA0292h\n01AA0244: mov rax,rdi\n01AA0247: mov r14,rdi\n01AA024A: mov r15,rdi\n01AA024D: mov r12,rdi\n01AA0250: movzx ecx,byte ptr [rbx+rax-1]\n01AA0255: call 0000000001E494B0h ; isspace\n01AA025A: test eax,eax\n01AA025C: je near ptr 0000000001AA02E7h\n01AA0262: lea rdi,[r14-1]\n01AA0266: cmp r15,rdi\n01AA0269: cmovb rdi,r12\n01AA026D: mov [rbp-51h],rdi\n01AA0271: inc r13\n01AA0274: mov rax,rdi\n01AA0277: mov r14,rdi\n01AA027A: mov r15,rdi\n01AA027D: mov r12,rdi\n01AA0280: test rdi,rdi\n01AA0283: jne short 0000000001AA0250h\n01AA0285: mov r14,[rsp+30h]\n01AA028A: mov r15,[rbp-69h]\n01AA028E: mov r12,[rbp+57h]\n01AA0292: test r13,r13\n01AA0295: je short 0000000001AA02CDh\n01AA0297: cmp r13,rsi\n01AA029A: jne short 0000000001AA02CDh\n01AA029C: sub r14,r13\n01AA029F: mov [rsp+30h],r14\n01AA02A4: mov rsi,[rsp+38h]\n01AA02A9: cmp rsi,r13\n01AA02AC: jb near ptr 0000000001AA044Ch\n01AA02B2: add r15,r13\n01AA02B5: sub rsi,r13\n01AA02B8: mov [rbp-79h],r15\n01AA02BC: mov [rbp-71h],rsi\n01AA02C0: movaps xmm6,[rbp-79h]\n01AA02C4: mov r13d,[rbp+6Fh]\n01AA02C8: jmp near ptr 0000000001AA01A4h\n01AA02CD: xor r13d,r13d\n01AA02D0: movaps [rbp-59h],xmm6\n01AA02D4: movdqa xmm0,xmm6\n01AA02D8: psrldq xmm0,8\n01AA02DD: movq rdi,xmm0\n01AA02E2: movq rbx,xmm6\n01AA02E7: mov rsi,[rsp+38h]\n01AA02EC: lea rdx,[rbp-59h]\n01AA02F0: mov rcx,[rbp+67h]\n01AA02F4: call 00000000015DB510h ; ??$_Emplace_one_at_back@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@?$vector@V?$basic_string_view@DU?$char_traits@D@std@@@std@@V?$allocator@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@2@@std@@AEAAAEAV?$basic_string_view@DU?$char_traits@D@std@@@1@AEBV21@@Z | ??$_Emplace_one_at_back@AEBVVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@AEBV2@@Z | ??$_Emplace_one_at_back@VColor@agui@@@?$vector@VColor@agui@@V?$allocator@VColor@agui@@@std@@@std@@AEAAAEAVColor@agui@@$$QEAV23@@Z | ??$_Emplace_one_at_back@VVector@@@?$vector@VVector@@V?$allocator@VVector@@@std@@@std@@AEAAAEAVVector@@$$QEAV2@@Z\n01AA02F9: mov rax,[rbp+7Fh]\n01AA02FD: mov r12,[rbp+57h]\n01AA0301: test rax,rax\n01AA0304: je short 0000000001AA0311h\n01AA0306: mov eax,[rax+8]\n01AA0309: jmp short 0000000001AA031Bh\n01AA030B: mov rbx,[rbp-59h]\n01AA030F: jmp short 0000000001AA02ECh\n01AA0311: mov rax,[r12]\n01AA0315: mov rcx,r12\n01AA0318: call qword ptr [rax+8]\n01AA031B: mov edx,[rbp+5Fh]\n01AA031E: add edx,eax\n01AA0320: mov [rbp+5Fh],edx\n01AA0323: cmp edx,[rbp+77h]\n01AA0326: jg near ptr 0000000001AA0428h\n01AA032C: cmp rdi,rsi\n01AA032F: je near ptr 0000000001AA03AFh\n01AA0335: xor edx,edx\n01AA0337: lea rax,[rdi+rbx]\n01AA033B: cmp rbx,rax\n01AA033E: je short 0000000001AA036Ch\n01AA0340: inc rdx\n01AA0343: inc rbx\n01AA0346: cmp rbx,rax\n01AA0349: je short 0000000001AA036Ch\n01AA034B: nop dword ptr [rax+rax]\n01AA0350: movzx ecx,byte ptr [rbx]\n01AA0353: test cl,cl\n01AA0355: jns short 0000000001AA0367h\n01AA0357: and cl,0C0h\n01AA035A: cmp cl,0C0h\n01AA035D: je short 0000000001AA0367h\n01AA035F: inc rbx\n01AA0362: cmp rax,rbx\n01AA0365: jne short 0000000001AA0350h\n01AA0367: cmp rbx,rax\n01AA036A: jne short 0000000001AA0340h\n01AA036C: lea rax,[rdx+r13]\n01AA0370: mov r14,[rsp+30h]\n01AA0375: sub r14,rax\n01AA0378: mov [rsp+30h],r14\n01AA037D: lea rdx,[rdi+r13]\n01AA0381: cmp rsi,rdx\n01AA0384: jb near ptr 0000000001AA044Ch\n01AA038A: mov rcx,rsi\n01AA038D: sub rcx,rdi\n01AA0390: sub rcx,r13\n01AA0393: sub rsi,rdx\n01AA0396: mov rax,rsi\n01AA0399: mov r15,[rbp-69h]\n01AA039D: add r15,rdx\n01AA03A0: mov rsi,rcx\n01AA03A3: cmp rax,rcx\n01AA03A6: cmovb rsi,rax\n01AA03AA: jmp near ptr 0000000001AA02B8h\n01AA03AF: mov rcx,[rbp-49h]\n01AA03B3: add rcx,10h\n01AA03B7: mov [rbp-49h],rcx\n01AA03BB: cmp rcx,[rbp-29h]\n01AA03BF: je short 0000000001AA03CDh\n01AA03C1: mov [rbp+5Fh],edx\n01AA03C4: mov r13d,[rbp+6Fh]\n01AA03C8: jmp near ptr 0000000001AA0140h\n01AA03CD: mov rcx,[rbp-41h]\n01AA03D1: xor ebx,ebx\n01AA03D3: test rcx,rcx\n01AA03D6: je short 0000000001AA040Ah\n01AA03D8: mov rdx,[rbp-31h]\n01AA03DC: sub rdx,rcx\n01AA03DF: and rdx,0FFFFFFFFFFFFFFF0h\n01AA03E3: mov rax,rcx\n01AA03E6: cmp rdx,1000h\n01AA03ED: jb short 0000000001AA0404h\n01AA03EF: add rdx,27h\n01AA03F3: mov rcx,[rcx-8]\n01AA03F7: sub rax,rcx\n01AA03FA: sub rax,8\n01AA03FE: cmp rax,1Fh\n01AA0402: ja short 0000000001AA0433h\n01AA0404: call 0000000001E2E4E4h ; ??3@YAXPEAX_K@Z | ??_V@YAXPEAX@Z\n01AA0409: nop\n01AA040A: mov eax,ebx\n01AA040C: movaps xmm6,[rsp+0B0h]\n01AA0414: add rsp,0C8h\n01AA041B: pop r15\n01AA041D: pop r14\n01AA041F: pop r13\n01AA0421: pop r12\n01AA0423: pop rdi\n01AA0424: pop rsi\n01AA0425: pop rbx\n01AA0426: pop rbp\n01AA0427: ret\n01AA0428: mov rcx,[rbp-41h]\n01AA042C: mov ebx,1\n01AA0431: jmp short 0000000001AA03D3h\n01AA0433: mov qword ptr [rsp+20h],0\n01AA043C: xor r9d,r9d\n01AA043F: xor r8d,r8d\n01AA0442: xor edx,edx\n01AA0444: xor ecx,ecx\n01AA0446: call 0000000001E42694h ; _invoke_watson\n01AA044B: nop\n01AA044C: call 000000000187B910h ; ?_Xran@?$basic_string_view@DU?$char_traits@D@std@@@std@@CAXXZ\n01AA0451: int 3\n01AA0452: int 3\n01AA0453: int 3\n01AA0454: int 3\n01AA0455: int 3\n01AA0456: int 3\n01AA0457: int 3\n01AA0458: int 3\n01AA0459: int 3\n01AA045A: int 3\n01AA045B: int 3\n01AA045C: int 3\n01AA045D: int 3\n01AA045E: int 3\n01AA045F: int 3"
+  },
+  "simple": {
+    "name": "?simpleWrapTextUnsafe@ResizableText@agui@@SA?AV?$basic_string_view@DU?$char_traits@D@std@@@std@@V34@_KPEAVRichTextData@2@PEBVFont@2@H@Z",
+    "rva": 27917440,
+    "size": 960,
+    "raw_fingerprint": "89db4c93f0e73083",
+    "normalized_fingerprint": "9a1761e152b1310d",
+    "calls": [],
+    "differences": [],
+    "assembly": "01A9FC80: mov [rsp+20h],r9\n01A9FC85: mov [rsp+18h],r8\n01A9FC8A: mov [rsp+8],rcx\n01A9FC8F: push rbx\n01A9FC90: push r13\n01A9FC92: push r14\n01A9FC94: sub rsp,80h\n01A9FC9B: mov r14,r8\n01A9FC9E: mov r13,rdx\n01A9FCA1: mov rbx,rcx\n01A9FCA4: test r9,r9\n01A9FCA7: jne near ptr 0000000001A9FD4Bh\n01A9FCAD: movaps xmm0,[rdx]\n01A9FCB0: lea rdx,[rsp+40h]\n01A9FCB5: mov rcx,[rsp+0C0h]\n01A9FCBD: movsd xmm3,qword ptr [23F0B48h]\n01A9FCC5: mov r8d,[rsp+0C8h]\n01A9FCCD: movdqa [rsp+40h],xmm0\n01A9FCD3: mov rax,[rcx]\n01A9FCD6: call qword ptr [rax+28h]\n01A9FCD9: mov rdx,rax\n01A9FCDC: test rax,rax\n01A9FCDF: jne short 0000000001A9FD27h\n01A9FCE1: cmp [r13+8],rax\n01A9FCE5: je short 0000000001A9FD27h\n01A9FCE7: movaps xmm0,[r13]\n01A9FCEC: movaps [rsp+40h],xmm0\n01A9FCF1: psrldq xmm0,8\n01A9FCF6: movq rcx,xmm0\n01A9FCFB: test rcx,rcx\n01A9FCFE: je short 0000000001A9FD27h\n01A9FD00: mov edx,1\n01A9FD05: cmp rdx,rcx\n01A9FD08: jae short 0000000001A9FD27h\n01A9FD0A: mov r8,[rsp+40h]\n01A9FD0F: nop\n01A9FD10: movzx eax,byte ptr [r8+rdx]\n01A9FD15: test al,al\n01A9FD17: jns short 0000000001A9FD27h\n01A9FD19: and al,0C0h\n01A9FD1B: cmp al,0C0h\n01A9FD1D: je short 0000000001A9FD27h\n01A9FD1F: inc rdx\n01A9FD22: cmp rdx,rcx\n01A9FD25: jb short 0000000001A9FD10h\n01A9FD27: mov rax,[r13]\n01A9FD2B: cmp [r13+8],rdx\n01A9FD2F: mov [rbx],rax\n01A9FD32: mov rax,rbx\n01A9FD35: cmovb rdx,[r13+8]\n01A9FD3A: mov [rbx+8],rdx\n01A9FD3E: add rsp,80h\n01A9FD45: pop r14\n01A9FD47: pop r13\n01A9FD49: pop rbx\n01A9FD4A: ret\n01A9FD4B: movsxd rax,dword ptr [rsp+0C8h]\n01A9FD53: mov [rsp+0A8h],rbp\n01A9FD5B: mov [rsp+78h],rsi\n01A9FD60: mov rsi,r8\n01A9FD63: mov [rsp+70h],rdi\n01A9FD68: xor edi,edi\n01A9FD6A: shr rsi,1\n01A9FD6D: mov ebp,edi\n01A9FD6F: shr rax,1\n01A9FD72: cmp rax,rsi\n01A9FD75: mov [rsp+68h],r12\n01A9FD7A: mov [rsp+60h],r15\n01A9FD7F: cmovb rsi,rax\n01A9FD83: movaps [rsp+50h],xmm6\n01A9FD88: movsd xmm6,qword ptr [23F0B48h]\n01A9FD90: cmp r8,1\n01A9FD94: jbe near ptr 0000000001A9FE5Ah\n01A9FD9A: mov r12,[rdx]\n01A9FD9D: mov r15,[rsp+0C0h]\n01A9FDA5: mov rbx,rdi\n01A9FDA8: test rsi,rsi\n01A9FDAB: je short 0000000001A9FDEEh\n01A9FDAD: movaps xmm0,[r13]\n01A9FDB2: mov r8,rsi\n01A9FDB5: movdqa [rsp+30h],xmm0\n01A9FDBB: mov rcx,[rsp+38h]\n01A9FDC0: mov rdx,[rsp+30h]\n01A9FDC5: cmp rbx,rcx\n01A9FDC8: jae short 0000000001A9FDE8h\n01A9FDCA: inc rbx\n01A9FDCD: cmp rbx,rcx\n01A9FDD0: jae short 0000000001A9FDE8h\n01A9FDD2: movzx eax,byte ptr [rdx+rbx]\n01A9FDD6: test al,al\n01A9FDD8: jns short 0000000001A9FDE8h\n01A9FDDA: and al,0C0h\n01A9FDDC: cmp al,0C0h\n01A9FDDE: je short 0000000001A9FDE8h\n01A9FDE0: inc rbx\n01A9FDE3: cmp rbx,rcx\n01A9FDE6: jb short 0000000001A9FDD2h\n01A9FDE8: sub r8,1\n01A9FDEC: jne short 0000000001A9FDC5h\n01A9FDEE: mov rax,[r15]\n01A9FDF1: mov rcx,r15\n01A9FDF4: call qword ptr [rax+58h]\n01A9FDF7: mov r8,[rsp+0B8h]\n01A9FDFF: lea rdx,[rsp+40h]\n01A9FE04: mov r9,r15\n01A9FE07: movsd qword ptr [rsp+20h],xmm6\n01A9FE0D: mov [rsp+40h],r12\n01A9FE12: mov rcx,[rax]\n01A9FE15: mov [rsp+48h],rbx\n01A9FE1A: mov r10,[rcx+28h]\n01A9FE1E: mov rcx,rax\n01A9FE21: call r10\n01A9FE24: cmp eax,[rsp+0C8h]\n01A9FE2B: mov rcx,rsi\n01A9FE2E: cmovle rcx,r14\n01A9FE32: cmovle rbp,rsi\n01A9FE36: mov rax,rcx\n01A9FE39: mov r14,rcx\n01A9FE3C: sub rax,rbp\n01A9FE3F: mov rsi,rax\n01A9FE42: shr rsi,1\n01A9FE45: add rsi,rbp\n01A9FE48: cmp rax,1\n01A9FE4C: ja near ptr 0000000001A9FDA5h\n01A9FE52: mov [rsp+0B0h],rcx\n01A9FE5A: test rbp,rbp\n01A9FE5D: je short 0000000001A9FEA0h\n01A9FE5F: movaps xmm0,[r13]\n01A9FE64: mov r8,rbp\n01A9FE67: movdqa [rsp+40h],xmm0\n01A9FE6D: mov rcx,[rsp+48h]\n01A9FE72: mov rdx,[rsp+40h]\n01A9FE77: cmp rdi,rcx\n01A9FE7A: jae short 0000000001A9FE9Ah\n01A9FE7C: inc rdi\n01A9FE7F: cmp rdi,rcx\n01A9FE82: jae short 0000000001A9FE9Ah\n01A9FE84: movzx eax,byte ptr [rdx+rdi]\n01A9FE88: test al,al\n01A9FE8A: jns short 0000000001A9FE9Ah\n01A9FE8C: and al,0C0h\n01A9FE8E: cmp al,0C0h\n01A9FE90: je short 0000000001A9FE9Ah\n01A9FE92: inc rdi\n01A9FE95: cmp rdi,rcx\n01A9FE98: jb short 0000000001A9FE84h\n01A9FE9A: sub r8,1\n01A9FE9E: jne short 0000000001A9FE77h\n01A9FEA0: cmp rbp,r14\n01A9FEA3: ja near ptr 0000000001A9FF49h\n01A9FEA9: movaps xmm0,[r13]\n01A9FEAE: mov r12,[r13]\n01A9FEB2: movdqa [rsp+40h],xmm0\n01A9FEB8: mov rbx,[rsp+48h]\n01A9FEBD: mov rsi,[rsp+40h]\n01A9FEC2: mov r15,rbp\n01A9FEC5: mov r14,rdi\n01A9FEC8: inc rbp\n01A9FECB: cmp rdi,rbx\n01A9FECE: jae short 0000000001A9FEEEh\n01A9FED0: inc rdi\n01A9FED3: cmp rdi,rbx\n01A9FED6: jae short 0000000001A9FEEEh\n01A9FED8: movzx eax,byte ptr [rsi+rdi]\n01A9FEDC: test al,al\n01A9FEDE: jns short 0000000001A9FEEEh\n01A9FEE0: and al,0C0h\n01A9FEE2: cmp al,0C0h\n01A9FEE4: je short 0000000001A9FEEEh\n01A9FEE6: inc rdi\n01A9FEE9: cmp rdi,rbx\n01A9FEEC: jb short 0000000001A9FED8h\n01A9FEEE: mov rcx,[rsp+0C0h]\n01A9FEF6: mov rax,[rcx]\n01A9FEF9: call qword ptr [rax+58h]\n01A9FEFC: mov r9,[rsp+0C0h]\n01A9FF04: lea rdx,[rsp+40h]\n01A9FF09: mov r8,[rsp+0B8h]\n01A9FF11: movsd qword ptr [rsp+20h],xmm6\n01A9FF17: mov rcx,[rax]\n01A9FF1A: mov [rsp+40h],r12\n01A9FF1F: mov [rsp+48h],rdi\n01A9FF24: mov r10,[rcx+28h]\n01A9FF28: mov rcx,rax\n01A9FF2B: call r10\n01A9FF2E: cmp eax,[rsp+0C8h]\n01A9FF35: jg short 0000000001A9FF43h\n01A9FF37: cmp rbp,[rsp+0B0h]\n01A9FF3F: jbe short 0000000001A9FEC2h\n01A9FF41: jmp short 0000000001A9FF49h\n01A9FF43: mov rbp,r15\n01A9FF46: mov rdi,r14\n01A9FF49: movaps xmm6,[rsp+50h]\n01A9FF4E: test rbp,rbp\n01A9FF51: mov rbp,[rsp+0A8h]\n01A9FF59: mov r15,[rsp+60h]\n01A9FF5E: mov r12,[rsp+68h]\n01A9FF63: jne near ptr 0000000001AA0005h\n01A9FF69: mov rbx,[r13+8]\n01A9FF6D: test rbx,rbx\n01A9FF70: je near ptr 0000000001AA0005h\n01A9FF76: movaps xmm0,[r13]\n01A9FF7B: movaps [rsp+40h],xmm0\n01A9FF80: psrldq xmm0,8\n01A9FF85: movq rcx,xmm0\n01A9FF8A: cmp rdi,rcx\n01A9FF8D: jae short 0000000001A9FFB6h\n01A9FF8F: inc rdi\n01A9FF92: cmp rdi,rcx\n01A9FF95: jae short 0000000001A9FFB6h\n01A9FF97: mov rdx,[rsp+40h]\n01A9FF9C: nop dword ptr [rax]\n01A9FFA0: movzx eax,byte ptr [rdx+rdi]\n01A9FFA4: test al,al\n01A9FFA6: jns short 0000000001A9FFB6h\n01A9FFA8: and al,0C0h\n01A9FFAA: cmp al,0C0h\n01A9FFAC: je short 0000000001A9FFB6h\n01A9FFAE: inc rdi\n01A9FFB1: cmp rdi,rcx\n01A9FFB4: jb short 0000000001A9FFA0h\n01A9FFB6: mov rsi,[rsp+0C0h]\n01A9FFBE: mov rcx,rsi\n01A9FFC1: mov rax,[rsi]\n01A9FFC4: call qword ptr [rax+58h]\n01A9FFC7: mov rcx,[r13]\n01A9FFCB: lea r8,[rsp+40h]\n01A9FFD0: mov r9,[rsp+0B8h]\n01A9FFD8: lea rdx,[rsp+30h]\n01A9FFDD: mov [rsp+40h],rcx\n01A9FFE2: cmp rbx,rdi\n01A9FFE5: mov rcx,[rax]\n01A9FFE8: cmovb rdi,rbx\n01A9FFEC: mov [rsp+20h],rsi\n01A9FFF1: mov [rsp+48h],rdi\n01A9FFF6: mov r10,[rcx+48h]\n01A9FFFA: mov rcx,rax\n01A9FFFD: call r10\n01AA0000: mov rdi,[rsp+38h]\n01AA0005: mov rdx,[rsp+0A0h]\n01AA000D: cmp [r13+8],rdi\n01AA0011: mov rax,[r13]\n01AA0015: cmovb rdi,[r13+8]\n01AA001A: mov rsi,[rsp+78h]\n01AA001F: mov [rdx],rax\n01AA0022: mov rax,rdx\n01AA0025: mov [rdx+8],rdi\n01AA0029: mov rdi,[rsp+70h]\n01AA002E: add rsp,80h\n01AA0035: pop r14\n01AA0037: pop r13\n01AA0039: pop rbx\n01AA003A: ret\n01AA003B: int 3\n01AA003C: int 3\n01AA003D: int 3\n01AA003E: int 3\n01AA003F: int 3"
+  },
+  "retreat_rva": 27918851,
+  "continuation_rva": 27918908
+}

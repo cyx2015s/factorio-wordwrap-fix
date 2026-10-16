@@ -1,0 +1,36 @@
+[
+  {
+    "font": "0x1d82b675990",
+    "width": 363,
+    "height": 112,
+    "rich": true,
+    "result": 1,
+    "overflow": [],
+    "source": "高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后",
+    "lines": [
+      "高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放",
+      "在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句",
+      "号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后不能",
+      "粘连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]",
+      "前后不能粘连，句号不能放在行首。高度回归：中文",
+      "Factorio混排[entity=fusion-generator]前后"
+    ]
+  },
+  {
+    "font": "0x1d82b675990",
+    "width": 351,
+    "height": 2147483647,
+    "rich": true,
+    "result": 0,
+    "overflow": [],
+    "source": "高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后",
+    "lines": [
+      "高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘连，句号不能",
+      "放在行首。高度回归：中文Factorio混排[entity=fusion-generator]前后不能粘",
+      "连，句号不能放在行首。高度回归：中文Factorio混排[entity=fusion-generator]",
+      "前后不能粘连，句号不能放在行首。高度回归：中文",
+      "Factorio混排[entity=fusion-generator]前后不能粘连，句号不能放在行首。高度",
+      "回归：中文Factorio混排[entity=fusion-generator]前后"
+    ]
+  }
+]

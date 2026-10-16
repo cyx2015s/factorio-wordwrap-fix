@@ -2,5 +2,3 @@
 /rextract/target
 /.runtime
 __pycache__/
-/tests
-*.zip
