@@ -1,11 +1,19 @@
-# 原生换行的逆向契约（2.1.19 build 87445，Windows x64）
+# 原生换行的逆向契约（当前实测 2.1.22 build 87719，Windows x64）
 
-本次通过同目录 `factorio.pdb` 与实际 exe 重新提取；不是根据旧 2.1.15 文本推断。
+现在由 `wordwrap-inject --inspect <exe> --report <dir>` 自动读取匹配 PDB、定位符号、提取函数区间并生成带调用目标符号的反汇编。
 
-- `agui::ResizableText::multiMakeLinesStrView`：RVA `0x1A89FE0`。
-- 原生宽度前缀计算 `simpleWrapTextUnsafe`：RVA `0x1A89C20`。
-- 断点回退基本块：`multi+0x1C3 .. +0x1FC`，即 `0x1A8A1A3 .. 0x1A8A1DC`。
-- 函数 `[+16,+0x400)` 的 FNV-1a/64 指纹：`0x08E1F8A33B7F69A9`。首 16 字节允许诊断 hook 使用，剩余函数体必须与复核版本一致。
+| 版本 | multi RVA | simple RVA | 回退块入口 | 续接点 |
+| --- | --- | --- | --- | --- |
+| 2.1.15（历史反汇编） | 0x1A824E0 | 0x1A82120 | 0x1A826A3 | 0x1A826DC |
+| 2.1.19（此前实测） | 0x1A89FE0 | 0x1A89C20 | 0x1A8A1A3 | 0x1A8A1DC |
+| 2.1.22（本次实测） | 0x1AA0040 | 0x1A9FC80 | 0x1AA0203 | 0x1AA023C |
+
+三个版本 multi 的指令布局一致；机械变化是外部调用目标位移。2.1.19 旧原始窗口指纹为 `08e1f8a33b7f69a9`，2.1.22 变为 `1a164d0d36c7e667`，因此旧 DLL 正确拒绝了更新版本。
+新校验对两个完整函数作解码与归一化字节比对；multi 长 1056 字节，simple 长 960 字节。只屏蔽已解码 CALL rel32 与 RIP 相对操作数中的地址位移，其他字节必须精确一致，包括内部跳转、寄存器、栈偏移、入口和末尾错误分支。
+9 个直接调用点还须命中批准的完整符号；simple 的 RIP 引用还须指向 double 1.0。不能通过把调用改向别处或更改常量来利用地址屏蔽。
+动态 RVA 由 PDB 唯一符号计算；固定的 `+0x1C3/+0x1FC` 只在完整指令契约匹配后使用，非任意版本的后备偏移。
+
+参考片段及历史重建来源见 [native-profile/fixtures/README.md](native-profile/fixtures/README.md)。2.1.15、2.1.19 的迁移回放是静态重建测试，本次实际运行的是 2.1.22。
 
 `multi` 的机器级参数是 `(Font*, const MSVC_string*, vector<string_view>*, int width, int max_height_pixels, RichTextData*) -> int`。
 `simple` 返回 16 字节 string_view，有 MSVC 的隐藏返回地址参数：`(View* result, const View* input, size_t character_count, RichTextData*, Font*, int width) -> View*`。
@@ -40,7 +48,10 @@ rich data 为空时，方括号文本按普通文本处理。
 复核命令：
 
 ```powershell
-cargo run --release --manifest-path rextract/Cargo.toml --bin disasm -- <factorio.exe> <factorio.pdb>
+.\target\release\wordwrap-inject.exe --inspect <factorio.exe> --report .runtime/inspection
+.\target\release\wordwrap-inject.exe --inspect <factorio.exe> --symbol multiMakeLinesStrView --report .runtime/inspection
 ```
 
-更新版本时需要重新检查完整函数、参数/返回 ABI、寄存器与局部变量存活区，再更新指纹；只看到短字节模式相同不够。
+注入器先在进程外读取目标 exe 路径并检查；DLL 共用同一解析代码、缓存解析结果，再检查运行中 PE 身份与代码字节。
+自己的观察/边界 detour 只允许已记录的五字节跳转差异；未知内存修改拒绝。启用和恢复时也会复核现有代码。
+若新的编译器改变了指令流、布局或 ABI，仍需要人工逆向；工具输出差异与完整反汇编，不会自动批准新模板。

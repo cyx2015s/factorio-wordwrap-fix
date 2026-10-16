@@ -1,6 +1,6 @@
 //! Native wrapping stays in Factorio; only its boundary retreat is replaced.
 use anyhow::{Context, Result, ensure};
-use pdb::FallibleIterator;
+use factorio_native_profile::{Function, Profile};
 use retour::GenericDetour;
 use std::sync::{
     Mutex, OnceLock,
@@ -20,59 +20,87 @@ type Simple =
     unsafe extern "C" fn(*mut View, *const View, usize, *const u8, *const u8, i32) -> *mut View;
 static SIMPLE: OnceLock<Simple> = OnceLock::new();
 
-pub fn resolve(term: &str) -> Result<usize> {
-    let exe = std::env::current_exe()?;
-    let mut pdb = pdb::PDB::open(std::fs::File::open(exe.with_extension("pdb"))?)?;
-    let info = pdb.pdb_information()?;
-    let base = unsafe { windows::Win32::System::LibraryLoader::GetModuleHandleA(None) }?.0 as usize;
-    // Refuse a stale/replaced PDB before using any of its addresses. CodeView
-    // records in the loaded PE image identify the exact PDB GUID and age.
+static PROFILE: OnceLock<Profile> = OnceLock::new();
+static OBSERVER_BYTES: OnceLock<[u8; 5]> = OnceLock::new();
+static BOUNDARY_BYTES: OnceLock<[u8; 5]> = OnceLock::new();
+fn profile() -> Result<&'static Profile> {
+    if PROFILE.get().is_none() {
+        let p = Profile::load(&std::env::current_exe()?)?;
+        p.ensure_compatible()?;
+        log::info!(
+            "profile: multi RVA {:#x}, simple RVA {:#x}, normalized {}",
+            p.multi.rva,
+            p.simple.rva,
+            p.multi.normalized_fingerprint
+        );
+        PROFILE
+            .set(p)
+            .map_err(|_| anyhow::anyhow!("profile already initialized"))?;
+    }
+    PROFILE.get().context("profile unavailable")
+}
+fn base_address() -> Result<usize> {
+    Ok(unsafe { windows::Win32::System::LibraryLoader::GetModuleHandleA(None) }?.0 as usize)
+}
+// Check the running image, not just the file inspected by the external injector.
+// Only our own live five-byte detours may differ from the disk bytes.
+fn native_address(function: &Function, is_multi: bool) -> Result<usize> {
+    let p = profile()?;
+    let base = base_address()?;
     let read32 = |off: usize| unsafe { ((base + off) as *const u32).read_unaligned() as usize };
     let nt = read32(0x3c);
     let opt = nt + 24;
-    let image_size = read32(opt + 56);
-    let debug = read32(opt + 112 + 6 * 8);
-    let debug_size = read32(opt + 112 + 6 * 8 + 4);
     ensure!(
-        debug_size <= 4096 && debug + debug_size <= image_size,
-        "invalid PE debug directory"
+        read32(opt + 56) == p.image_size as usize,
+        "running PE image size differs from inspected file"
+    );
+    let debug = read32(opt + 160);
+    let len = read32(opt + 164);
+    ensure!(
+        len <= 4096 && debug + len <= p.image_size as usize,
+        "invalid live debug directory"
     );
     let mut matched = false;
-    for off in (debug..debug + debug_size).step_by(28) {
+    for off in (debug..debug + len).step_by(28) {
         if read32(off + 12) == 2 {
             let cv = read32(off + 20);
-            if cv + 24 <= image_size {
+            if cv + 24 <= p.image_size as usize {
                 let bytes = unsafe { std::slice::from_raw_parts((base + cv) as *const u8, 24) };
                 matched |= &bytes[..4] == b"RSDS"
-                    && bytes[4..20] == info.guid.to_bytes_le()
-                    && read32(cv + 20) == info.age as usize;
+                    && bytes[4..20] == p.identity.guid
+                    && read32(cv + 20) == p.identity.age as usize;
             }
         }
     }
-    ensure!(
-        matched,
-        "factorio.pdb GUID/age does not match the running executable"
-    );
-    let table = pdb.global_symbols()?;
-    let map = pdb.address_map()?;
-    let mut iter = table.iter();
-    let mut found = Vec::new();
-    while let Some(symbol) = iter.next()? {
-        if let Ok(pdb::SymbolData::Public(data)) = symbol.parse()
-            && data.name.to_string().contains(term)
-            && let Some(rva) = data.offset.to_rva(&map)
-        {
-            found.push(rva.0 as usize);
+    ensure!(matched, "running PE GUID/age differs from inspected file");
+    let addr = base + function.rva as usize;
+    let mut live = unsafe { std::slice::from_raw_parts(addr as *const u8, function.size) }.to_vec();
+    if is_multi {
+        if MULTI.get().is_some_and(|h| h.is_enabled()) {
+            ensure!(
+                Some(&live[..5]) == OBSERVER_BYTES.get().map(|b| b.as_slice()),
+                "observer entry modified by another patch"
+            );
+            live[..5].copy_from_slice(&function.code[..5]);
+        }
+        if BOUNDARY_HOOK.get().is_some_and(|h| h.is_enabled()) {
+            let off = factorio_native_profile::RETREAT_OFFSET;
+            ensure!(
+                Some(&live[off..off + 5]) == BOUNDARY_BYTES.get().map(|b| b.as_slice()),
+                "boundary entry modified by another patch"
+            );
+            live[off..off + 5].copy_from_slice(&function.code[off..off + 5]);
         }
     }
-    found.sort_unstable();
-    found.dedup();
-    ensure!(found.len() == 1, "expected unique symbol {term}: {found:?}");
     ensure!(
-        found[0] + 0x400 <= image_size,
-        "symbol outside loaded image"
+        live == function.code,
+        "running native code differs from inspected executable: {}",
+        function.name
     );
-    Ok(base + found[0])
+    Ok(addr)
+}
+fn capture_five(addr: usize) -> [u8; 5] {
+    unsafe { std::ptr::read_unaligned(addr as *const [u8; 5]) }
 }
 
 unsafe extern "C" fn observe(
@@ -145,11 +173,11 @@ unsafe extern "C" fn observe(
 
 pub fn observe_install() -> Result<()> {
     if SIMPLE.get().is_none() {
-        let addr = resolve("?simpleWrapTextUnsafe@ResizableText@agui@@")?;
+        let addr = native_address(&profile()?.simple, false)?;
         let _ = SIMPLE.set(unsafe { std::mem::transmute::<usize, Simple>(addr) });
     }
     if MULTI.get().is_none() {
-        let addr = resolve("?multiMakeLinesStrView@ResizableText@agui@@")?;
+        let addr = native_address(&profile()?.multi, true)?;
         log::info!("native wrap @ {addr:#x}");
         let hook =
             unsafe { GenericDetour::new(std::mem::transmute::<usize, Multi>(addr), observe)? };
@@ -160,6 +188,9 @@ pub fn observe_install() -> Result<()> {
     unsafe {
         MULTI.get().context("hook not initialized")?.enable()?;
     }
+    let _ = OBSERVER_BYTES.set(capture_five(
+        base_address()? + profile()?.multi.rva as usize,
+    ));
     TRACE.store(true, Ordering::Relaxed);
     Ok(())
 }
@@ -169,6 +200,7 @@ pub fn install() -> Result<()> {
 }
 pub fn uninstall() -> Result<()> {
     if let Some(hook) = BOUNDARY_HOOK.get() {
+        native_address(&profile()?.multi, true)?;
         unsafe {
             hook.disable()?;
         }
@@ -189,14 +221,6 @@ pub fn observe_stop() -> Result<()> {
     Ok(())
 }
 
-// Verified 2.1.19 basic block: candidate retreat only. Relative isspace call
-// displacement is masked; every instruction and the continuation are checked.
-const RETREAT: &[u8] = &[
-    0x48, 0x85, 0xff, 0x74, 0x34, 0x0f, 0x1f, 0x84, 0, 0, 0, 0, 0, 0x0f, 0xb6, 0x4c, 0x3b, 0xff,
-    0xe8, 0, 0, 0, 0, 0x85, 0xc0, 0x75, 0x1e, 0x80, 0x7c, 0x3b, 0xff, 0x5d, 0x74, 0x17, 0x48, 0x8d,
-    0x47, 0xff, 0x48, 0x3b, 0xf8, 0x48, 0x0f, 0x42, 0xc7, 0x48, 0x8b, 0xf8, 0x48, 0x89, 0x45, 0xaf,
-    0x48, 0x85, 0xc0, 0x75, 0xd4,
-];
 static BOUNDARY_HOOK: OnceLock<retour::RawDetour> = OnceLock::new();
 static CONTINUE: std::sync::atomic::AtomicUsize = std::sync::atomic::AtomicUsize::new(0);
 
@@ -236,45 +260,10 @@ unsafe extern "C" fn boundary_stub() {
 }
 
 fn boundary_install() -> Result<()> {
+    let func = native_address(&profile()?.multi, true)?;
     if BOUNDARY_HOOK.get().is_none() {
-        let func = resolve("?multiMakeLinesStrView@ResizableText@agui@@")?;
-        let code = unsafe { std::slice::from_raw_parts(func as *const u8, 0x400) };
-        // Interior hooks depend on register/local-variable liveness beyond the
-        // overwritten bytes. Require the complete reviewed 2.1.19 body too.
-        // Skip the first 16 bytes, which the optional observer may detour.
-        let fingerprint = code[16..].iter().fold(0xcbf29ce484222325u64, |h, b| {
-            (h ^ u64::from(*b)).wrapping_mul(0x100000001b3)
-        });
-        ensure!(
-            fingerprint == 0x08e1f8a33b7f69a9,
-            "unsupported native wrap body {fingerprint:#x}; re-disassembly required"
-        );
-        ensure!(
-            code[0x1b..0x26] == [0x48, 0x8d, 0x68, 0xb1, 0x48, 0x81, 0xec, 0xc8, 0, 0, 0],
-            "unsupported native stack frame"
-        );
-        let matches: Vec<_> = code
-            .windows(RETREAT.len())
-            .enumerate()
-            .filter(|(_, b)| {
-                b.iter()
-                    .zip(RETREAT)
-                    .enumerate()
-                    .all(|(i, (a, b))| (19..23).contains(&i) || a == b)
-            })
-            .map(|(i, _)| i)
-            .collect();
-        ensure!(
-            matches.len() == 1,
-            "unsupported native retreat block; refusing to patch: {matches:?}"
-        );
-        let start = func + matches[0];
-        let end = start + RETREAT.len();
-        ensure!(
-            unsafe { std::slice::from_raw_parts(end as *const u8, 6) }
-                == [0x48, 0x8b, 0xf7, 0x48, 0x85, 0xff],
-            "unsupported continuation"
-        );
+        let start = func + factorio_native_profile::RETREAT_OFFSET;
+        let end = func + factorio_native_profile::CONTINUE_OFFSET;
         CONTINUE.store(end, Ordering::Release);
         let hook =
             unsafe { retour::RawDetour::new(start as *const (), boundary_stub as *const ())? };
@@ -289,6 +278,9 @@ fn boundary_install() -> Result<()> {
             .context("boundary not initialized")?
             .enable()?;
     }
+    let _ = BOUNDARY_BYTES.set(capture_five(
+        base_address()? + profile()?.retreat_rva as usize,
+    ));
     if let Ok(mut seen) = SEEN.lock() {
         seen.clear();
     }

@@ -11,3 +11,4 @@ path = "src/main.rs"
 [dependencies]
 dll-syringe = "0.17"
 anyhow = "1"
+factorio-native-profile = { path = "../native-profile" }
